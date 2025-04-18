@@ -1,27 +1,63 @@
+bin: git
 style: github
 template: CHANGELOG.tpl.md
+
 info:
   title: CHANGELOG
-  repository_url: https://github.com/lwijshoff/waldjugend-plugin
+  repository_url: https://github.com/lwijshoff/changelog-test
+
 options:
+  tag_filter_pattern: '^v'
+  sort: date
+
   commits:
-    # filters:
-    #   Type:
-    #     - feat
-    #     - fix
-    #     - perf
-    #     - refactor
+    filters:
+      Type:
+        - feat
+        - fix
+        - refactor
+        - perf
+    sort_by: Scope
+
   commit_groups:
-    # title_maps:
-    #   feat: Features
-    #   fix: Bug Fixes
-    #   perf: Performance Improvements
-    #   refactor: Code Refactoring
+    group_by: Type
+    sort_by: Title
+    title_order:
+      - feat
+      - fix
+      - refactor
+      - perf
+    title_maps:
+      feat: New Features
+      fix: Bug Fixes
+      refactor: Code Refactoring
+      perf: Performance Improvements
+
   header:
-    pattern: "^(\\w*)\\:\\s(.*)$"
+    pattern: "^(\\w*):\\s(.*)$"
     pattern_maps:
       - Type
       - Subject
+
+  issues:
+    prefix:
+      - "#"
+
+  refs:
+    actions:
+      - Closes
+      - Fixes
+
+  merges:
+    pattern: "^Merge branch '(\\w+)'$"
+    pattern_maps:
+      - Source
+
+  reverts:
+    pattern: "^Revert \"([\\s\\S]*)\"$"
+    pattern_maps:
+      - Header
+
   notes:
     keywords:
       - BREAKING CHANGE
