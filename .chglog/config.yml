@@ -4,7 +4,7 @@ template: CHANGELOG.tpl.md
 
 info:
   title: CHANGELOG
-  repository_url: https://github.com/lwijshoff/changelog-test
+  repository_url: https://github.com/lwijshoff/waldjugend-plugin
 
 options:
   tag_filter_pattern: '^v'
