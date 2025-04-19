@@ -8,12 +8,6 @@ class Waldjugend {
             $admin = new Waldjugend_Admin();
             $admin->init();
         }
-        if (!is_admin()) {
-            require_once plugin_dir_path(__DIR__) . 'public/class-waldjugend-public.php';
-            require_once plugin_dir_path(__DIR__) . 'public/partials/footer.php';
-
-            $public = new Waldjugend_Public();
-            $public->init();
-        }
+        require_once plugin_dir_path(__DIR__) . 'includes/footer.php';
     }    
 }
