@@ -7,5 +7,5 @@ function waldjugend_generate_footer_html() {
     if (isset($GLOBALS['waldjugend_public']) && method_exists($GLOBALS['waldjugend_public'], 'generate_footer_html')) {
         return $GLOBALS['waldjugend_public']->generate_footer_html();
     }
-    return ''; // Return empty if the object is not available
+    return 'test'; // Return empty if the object is not available
 }
