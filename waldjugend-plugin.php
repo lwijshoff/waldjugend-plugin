@@ -18,7 +18,7 @@
  * Update URI:        https://github.com/lwijshoff/waldjugend-plugin
  * Text Domain:       waldjugend-plugin
  * Domain Path:       /languages
- * Version:           0.1.0
+ * Version:           1.0.0
  * Requires at least: 5.2
  * Requires PHP:      8.3
  */
@@ -27,7 +27,7 @@ if (!defined('ABSPATH')) { // Exit if accessed directly.
     exit;
 }
 
-define('WALDJUGEND_PLUGIN_VERSION', '0.1.0');
+define('WALDJUGEND_PLUGIN_VERSION', '1.0.0');
 define('WALDJUGEND_PLUGIN_DIR', plugin_dir_path(__FILE__));
 define('WALDJUGEND_PLUGIN_SLUG', 'waldjugend-plugin');
 
