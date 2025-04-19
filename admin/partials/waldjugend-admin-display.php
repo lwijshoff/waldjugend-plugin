@@ -50,7 +50,7 @@
             <tr class="row-cookies-url">
                 <th scope="row">Cookie-Richtlinien URL</th>
                 <td>
-                    <input type="text" name="cookies_url" value="<?php echo esc_attr(get_option('cookies_url')); ?>" />
+                    <input type="text" name="cookie_url" value="<?php echo esc_attr(get_option('cookie_url')); ?>" />
                     <p class="description">URL für die Cookie-Richtlinien-Seite, kann auch eine relative URL sein (z.B. "/cookie-richtlinien-eu")</p>
                 </td>
             </tr>
