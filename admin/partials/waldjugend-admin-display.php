@@ -40,6 +40,27 @@
                     <p class="description">Website-Adresse ohne https:// (z.B. "www.waldjugend-musterland.de")</p>
                 </td>
             </tr>
+            <tr class="row-imprint-url">
+                <th scope="row">Impressum URL</th>
+                <td>
+                    <input type="text" name="imprint_url" value="<?php echo esc_attr(get_option('imprint_url')); ?>" />
+                    <p class="description">URL für die Impressum-Seite, kann auch eine relative URL sein (z.B. "/impressum")</p>
+                </td>
+            </tr>
+            <tr class="row-cookies-url">
+                <th scope="row">Cookie-Richtlinien URL</th>
+                <td>
+                    <input type="text" name="cookies_url" value="<?php echo esc_attr(get_option('cookies_url')); ?>" />
+                    <p class="description">URL für die Cookie-Richtlinien-Seite, kann auch eine relative URL sein (z.B. "/cookie-richtlinien-eu")</p>
+                </td>
+            </tr>
+            <tr class="row-privacy-url">
+                <th scope="row">Datenschutz URL</th>
+                <td>
+                    <input type="text" name="privacy_url" value="<?php echo esc_attr(get_option('privacy_url')); ?>" />
+                    <p class="description">URL für die Impressum-Seite, kann auch eine relative URL sein (z.B. "/datenschutz")</p>
+                </td>
+            </tr>
         </table>
         <?php submit_button(); ?>
     </form>

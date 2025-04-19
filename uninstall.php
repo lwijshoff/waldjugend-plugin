@@ -9,4 +9,7 @@ delete_option('waldjugend_type');
 delete_option('waldjugend_horst');
 delete_option('waldjugend_lvb');
 delete_option('waldjugend_lvb_url');
+delete_option('imprint_url');
+delete_option('cookies_url');
+delete_option('privacy_url');
 ?>

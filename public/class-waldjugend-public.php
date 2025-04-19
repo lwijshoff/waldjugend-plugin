@@ -10,9 +10,9 @@ class Waldjugend_Public {
         $year = date('Y');
 
         // Fetching the options for "Cookie-Richtlinien", "Impressum", and "Datenschutz"
-        $cookie_richtlinien = get_option('waldjugend_cookie_richtlinien', false);
-        $impressum = get_option('waldjugend_impressum', false);
-        $datenschutz = get_option('waldjugend_datenschutz', false);
+        $cookie_url = get_option('cookie_url', false);
+        $imprint_url = get_option('imprint_url', false);
+        $privacy_url = get_option('privacy_url', false);
 
         // Building the footer text with options if set
         $footer_text = '';
@@ -34,14 +34,14 @@ class Waldjugend_Public {
 
         // Add links to the footer text with hyphens if the options are set
         $links = [];
-        if ($impressum) {
-            $links[] = '<a href="' . esc_url($impressum) . '">Impressum</a>';
+        if ($imprint_url) {
+            $links[] = '<a href="' . esc_url($imprint_url) . '">Impressum</a>';
         }
-        if ($cookie_richtlinien) {
-            $links[] = '<a href="' . esc_url($cookie_richtlinien) . '">Cookie-Richtlinien</a>';
+        if ($cookie_url) {
+            $links[] = '<a href="' . esc_url($cookie_url) . '">Cookie-Richtlinien</a>';
         }
-        if ($datenschutz) {
-            $links[] = '<a href="' . esc_url($datenschutz) . '">Datenschutz</a>';
+        if ($privacy_url) {
+            $links[] = '<a href="' . esc_url($privacy_url) . '">Datenschutz</a>';
         }
 
         if (!empty($links)) {
