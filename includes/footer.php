@@ -11,8 +11,8 @@ function waldjugend_generate_footer_html() {
     $year = date('Y');
 
     // Fetching the options for "Cookie-Richtlinien", "Impressum", and "Datenschutz"
-    $cookie_url = get_option('cookie_url', false);
     $imprint_url = get_option('imprint_url', false);
+    $cookie_url = get_option('cookie_url', false);
     $privacy_url = get_option('privacy_url', false);
 
     // Building the footer text with options if set

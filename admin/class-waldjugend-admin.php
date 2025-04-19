@@ -25,7 +25,7 @@ class Waldjugend_Admin {
         register_setting('waldjugend_config_group', 'waldjugend_lvb');
         register_setting('waldjugend_config_group', 'waldjugend_lvb_url');
         register_setting('waldjugend_config_group', 'imprint_url');
-        register_setting('waldjugend_config_group', 'cookies_url');
+        register_setting('waldjugend_config_group', 'cookie_url');
         register_setting('waldjugend_config_group', 'privacy_url');
 
     }
