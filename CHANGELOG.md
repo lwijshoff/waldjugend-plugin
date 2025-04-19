@@ -7,8 +7,8 @@ The format is based on [Keep a Changelog](https://keepachangelog.com) and this p
 ## [Unreleased]
 
 
-<a name="v1.0.0-alpha"></a>
-## [v1.0.0-alpha] - 2025-04-19
+<a name="v1.0.0"></a>
+## [v1.0.0] - 2025-04-19
 ### Bug Fixes
 - Update cookie URL option name for consistency in settings
 - Correct cookie URL option name and ensure proper retrieval in footer
@@ -25,5 +25,5 @@ The format is based on [Keep a Changelog](https://keepachangelog.com) and this p
 <a name="v0.1.0"></a>
 ## v0.1.0 - 2025-04-17
 
-[Unreleased]: https://github.com/lwijshoff/waldjugend-plugin/compare/v1.0.0-alpha...HEAD
-[v1.0.0-alpha]: https://github.com/lwijshoff/waldjugend-plugin/compare/v0.1.0...v1.0.0-alpha
+[Unreleased]: https://github.com/lwijshoff/waldjugend-plugin/compare/v1.0.0...HEAD
+[v1.0.0]: https://github.com/lwijshoff/waldjugend-plugin/compare/v0.1.0...v1.0.0
