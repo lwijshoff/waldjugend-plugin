@@ -58,7 +58,7 @@
                 <th scope="row">Datenschutz URL</th>
                 <td>
                     <input type="text" name="privacy_url" value="<?php echo esc_attr(get_option('privacy_url')); ?>" />
-                    <p class="description">URL für die Impressum-Seite, kann auch eine relative URL sein (z.B. "/datenschutz")</p>
+                    <p class="description">URL für die Datenschutz-Seite, kann auch eine relative URL sein (z.B. "/datenschutz")</p>
                 </td>
             </tr>
         </table>
