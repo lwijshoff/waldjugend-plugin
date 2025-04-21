@@ -7,6 +7,12 @@ The format is based on [Keep a Changelog](https://keepachangelog.com) and this p
 ## [Unreleased]
 
 
+<a name="v1.0.1"></a>
+## [v1.0.1] - 2025-04-22
+### Bug Fixes
+- Renamed "Impressum" for the Datenschutz value to "Datenschutz"
+
+
 <a name="v1.0.0"></a>
 ## [v1.0.0] - 2025-04-19
 ### Bug Fixes
@@ -25,5 +31,6 @@ The format is based on [Keep a Changelog](https://keepachangelog.com) and this p
 <a name="v0.1.0"></a>
 ## v0.1.0 - 2025-04-17
 
-[Unreleased]: https://github.com/lwijshoff/waldjugend-plugin/compare/v1.0.0...HEAD
+[Unreleased]: https://github.com/lwijshoff/waldjugend-plugin/compare/v1.0.1...HEAD
+[v1.0.1]: https://github.com/lwijshoff/waldjugend-plugin/compare/v1.0.0...v1.0.1
 [v1.0.0]: https://github.com/lwijshoff/waldjugend-plugin/compare/v0.1.0...v1.0.0
