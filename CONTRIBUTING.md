@@ -51,8 +51,4 @@ Please use the following structure for your commit messages:
 
 If you're working locally, you can use tools like [Husky](https://typicode.github.io/husky/) and [Commitlint](https://commitlint.js.org/#/) to validate your commits before they’re submitted.
 
-## 🤖 Auto-Generated Changelog
-
-We use GitHub Actions to auto-generate the `CHANGELOG.md` file from commit history. Please make sure your commits follow the format above so your changes are properly documented.
-
 Thanks again for contributing! 💚
