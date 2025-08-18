@@ -1,52 +1,98 @@
 <?php
+/**
+ * The footer for Waldjugend theme.
+ *
+ * Built based on input from the users input in the admin panel.
+ *
+ * @package waldjugend-theme
+ * @since 2.0.0
+ * @author Leonard Wijshoff
+ */
 
-function waldjugend_generate_footer_html() {
-    /**
-     * Generates HTML footer content.
-     */
-    $type = get_option('waldjugend_type', 'ortsgruppe');
-    $horst = get_option('waldjugend_horst', 'Horst Musterstadt');
-    $lvb = get_option('waldjugend_lvb', 'Landesverband Musterland e.V.');
-    $lvb_url = get_option('waldjugend_lvb_url', 'www.waldjugend-musterland.de');
-    $year = date('Y');
+// --- Generate contact & links columns for the main footer ---
+function waldjugend_generate_main_footer_html() {
+    $html = '';
 
-    // Fetching the options for "Cookie-Richtlinien", "Impressum", and "Datenschutz"
-    $imprint_url = get_option('imprint_url', false);
-    $cookie_url = get_option('cookie_url', false);
-    $privacy_url = get_option('privacy_url', false);
+    // Wrap both columns in a flex container
+    $html .= '<div class="footer-columns">';
 
-    // Building the footer text with options if set
-    $footer_text = '';
+    // Collect contact details
+    $contact = [];
+    $street  = get_option('waldjugend_address_street', '');
+    $place   = get_option('waldjugend_address_place', '');
+    $email   = get_option('waldjugend_contact_email', '');
+    $phone   = get_option('waldjugend_contact_number', '');
 
-    if ($type === 'ortsgruppe') {
-        $footer_text .= sprintf(
-            'Die Waldjugend %s ist eine Ortsgruppe der <a href="//%s">%s</a>',
-            esc_html($horst),
-            esc_attr($lvb_url),
-            esc_html($lvb)
-        );
-    } else {
-        $footer_text .= sprintf(
-            '&copy; %s Deutsche Waldjugend %s',
-            esc_html($year),
-            esc_html($lvb)
-        );
+    if ($street) $contact[] = esc_html($street);
+    if ($place)  $contact[] = esc_html($place);
+    if ($email)  $contact[] = '<a class="main-footer-link" href="mailto:' . esc_attr($email) . '">' . esc_html($email) . '</a>';
+    if ($phone)  $contact[] = esc_html($phone);
+
+    if (!empty($contact)) {
+        $html .= '<div class="column">';
+        $html .= '<h3 class="menu-line">Kontakt</h3><ul>';
+        foreach ($contact as $item) {
+            $html .= '<p>' . $item . '</p>';
+        }
+        $html .= '</ul></div>';
     }
 
-    // Add links to the footer text with hyphens if the options are set
+    // Collect links
     $links = [];
-    if ($imprint_url) {
-        $links[] = '<a href="' . esc_url($imprint_url) . '">Impressum</a>';
-    }
-    if ($cookie_url) {
-        $links[] = '<a href="' . esc_url($cookie_url) . '">Cookie-Richtlinien</a>';
-    }
-    if ($privacy_url) {
-        $links[] = '<a href="' . esc_url($privacy_url) . '">Datenschutz</a>';
-    }
+    $imprint_url = get_option('waldjugend_imprint_url', '');
+    $cookie_url  = get_option('waldjugend_cookie_url', '');
+    $privacy_url = get_option('waldjugend_privacy_url', '');
+    $gtc_url     = get_option('waldjugend_gtc_url', '');
+
+    if ($imprint_url) $links[] = '<a class="main-footer-link" href="' . esc_url($imprint_url) . '">Impressum</a>';
+    if ($cookie_url)  $links[] = '<a class="main-footer-link" href="' . esc_url($cookie_url) . '">Cookie-Richtlinien</a>';
+    if ($privacy_url) $links[] = '<a class="main-footer-link" href="' . esc_url($privacy_url) . '">Datenschutz</a>';
+    if ($gtc_url)     $links[] = '<a class="main-footer-link" href="' . esc_url($gtc_url) . '">AGB</a>';
 
     if (!empty($links)) {
-        $footer_text .= ' - ' . implode(' - ', $links);
+        $html .= '<div class="column">';
+        $html .= '<h3 class="menu-line">Links</h3><ul>';
+        foreach ($links as $link) {
+            $html .= '<p>' . $link . '</p>';
+        }
+        $html .= '</ul></div>';
+    }
+
+    $html .= '</div>'; // close footer-columns wrapper
+
+    return $html;
+}
+
+// --- Generate footer HTML with all links and contact info ---
+function waldjugend_generate_bottom_footer_html() {
+    $year = date('Y');
+
+    // Get options with sane defaults
+    $type             = get_option('waldjugend_type', false);
+    $group            = get_option('waldjugend_group', 'Horst Musterstadt');
+    $association      = get_option('waldjugend_association', 'Bundesverband e.V.');
+    $association_url  = get_option('waldjugend_association_url', 'www.waldjugend.de');
+
+    // --- Build bottom footer ---
+    $footer_text = '';
+
+    if ($type === 'group' && $group && $association) {
+        $footer_text = sprintf(
+            '&copy; %s Deutsche Waldjugend %s - Teil vom <a href="%s">%s</a>',
+            esc_html($year),
+            esc_html($group),
+            esc_url($association_url),
+            esc_html($association)
+        );
+    } elseif ($type === 'association' && $association) {
+        $footer_text = sprintf(
+            '&copy; %s Deutsche Waldjugend %s',
+            esc_html($year),
+            esc_html($association)
+        );
+    } else {
+        // fallback if no settings yet
+        return '&copy; ' . esc_html($year) . ' <a href="https://github.com/lwijshoff">Leonard Wijshoff</a>';
     }
 
     return $footer_text;
