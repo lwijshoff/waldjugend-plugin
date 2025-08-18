@@ -18,7 +18,7 @@
  * Update URI:        https://github.com/lwijshoff/waldjugend-plugin
  * Text Domain:       waldjugend-plugin
  * Domain Path:       /languages
- * Version:           1.0.1
+ * Version:           2.0.0-alpha
  * Requires at least: 5.2
  * Requires PHP:      8.3
  */
@@ -27,7 +27,7 @@ if (!defined('ABSPATH')) { // Exit if accessed directly.
     exit;
 }
 
-define('WALDJUGEND_PLUGIN_VERSION', '1.0.1');
+define('WALDJUGEND_PLUGIN_VERSION', '2.0.0-alpha');
 define('WALDJUGEND_PLUGIN_DIR', plugin_dir_path(__FILE__));
 define('WALDJUGEND_PLUGIN_SLUG', 'waldjugend-plugin');
 
@@ -47,15 +47,15 @@ require_once WALDJUGEND_PLUGIN_DIR . 'includes/class-waldjugend.php';
 
 function waldjugend_get_config($key) {
     $defaults = [
-        'horst' => 'Horst Musterstadt',
-        'lvb' => 'Landesverband Musterland e.V.',
-        'lvb_url' => 'www.waldjugend-musterland.de',
+        'waldjugend_group' => 'Horst Musterstadt',
+        'waldjugend_association' => 'Landesverband Musterland e.V.',
+        'waldjugend_association_url' => 'www.waldjugend-musterland.de',
     ];
 
     $options = [
-        'horst' => get_option('waldjugend_horst', $defaults['horst']),
-        'lvb' => get_option('waldjugend_lvb', $defaults['lvb']),
-        'lvb_url' => get_option('waldjugend_lvb_url', $defaults['lvb_url']),
+        'waldjugend_group' => get_option('waldjugend_group', $defaults['waldjugend_group']),
+        'waldjugend_association' => get_option('waldjugend_association', $defaults['waldjugend_association']),
+        'waldjugend_association_url' => get_option('waldjugend_association_url', $defaults['waldjugend_association_url']),
     ];
 
     return $options[$key] ?? null;
