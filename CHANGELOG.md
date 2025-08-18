@@ -7,6 +7,12 @@ The format is based on [Keep a Changelog](https://keepachangelog.com) and this p
 ## [Unreleased]
 
 
+<a name="v2.0.0-alpha"></a>
+## [v2.0.0-alpha] - 2025-08-18
+### New Features
+- Update Waldjugend plugin to version 2.0.0-alpha with new settings and improved admin interface
+
+
 <a name="v1.0.1"></a>
 ## [v1.0.1] - 2025-04-22
 ### Bug Fixes
@@ -31,6 +37,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com) and this p
 <a name="v0.1.0"></a>
 ## v0.1.0 - 2025-04-17
 
-[Unreleased]: https://github.com/lwijshoff/waldjugend-plugin/compare/v1.0.1...HEAD
+[Unreleased]: https://github.com/lwijshoff/waldjugend-plugin/compare/v2.0.0-alpha...HEAD
+[v2.0.0-alpha]: https://github.com/lwijshoff/waldjugend-plugin/compare/v1.0.1...v2.0.0-alpha
 [v1.0.1]: https://github.com/lwijshoff/waldjugend-plugin/compare/v1.0.0...v1.0.1
 [v1.0.0]: https://github.com/lwijshoff/waldjugend-plugin/compare/v0.1.0...v1.0.0
