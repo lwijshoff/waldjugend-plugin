@@ -11,7 +11,7 @@ options:
   sort: date
 
   commits:
-    # Include regular commits and PR merges that have a type prefix
+    # Include only real commits with a type prefix
     filters:
       Type:
         - feat
@@ -35,7 +35,7 @@ options:
       perf: Performance Improvements
 
   header:
-    # parse type: subject from commit message, including PR merges if they have type
+    # Parse "type: subject" from commit message
     pattern: "^(\\w*):\\s(.*)$"
     pattern_maps:
       - Type
@@ -51,10 +51,8 @@ options:
       - Fixes
 
   merges:
-    # Only treat merges without a type prefix as special merges
-    pattern: "^Merge pull request #\\d+ from (?!feat|fix|refactor|perf).*"
-    pattern_maps:
-      - Source
+    # Ignore merge commits entirely, so PR's commits are used instead
+    pattern: "^$"
 
   reverts:
     pattern: "^Revert \"([\\s\\S]*)\"$"
