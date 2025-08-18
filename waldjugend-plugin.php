@@ -5,7 +5,7 @@
  * @package           waldjugend-plugin
  * @author            Leonard Wijshoff
  * @copyright         2025-present Leonard Wijshoff
- * @license           MIT
+ * @license           GPLv3
  * 
  * @wordpress-plugin
  * Plugin Name:       Waldjugend

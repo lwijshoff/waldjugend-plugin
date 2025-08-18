@@ -8,7 +8,7 @@ Built specifically for the [**waldjugend-theme**](https://github.com/lwijshoff/w
 == Compatibility ==
 
 The plugin is intended to be used with the following theme:
-* [Waldjugend Theme](https://github.com/lwijshoff/waldjugend-theme) version 1.5.0 and newer
+* [Waldjugend Theme](https://github.com/lwijshoff/waldjugend-theme) version 2.0.0 and newer
 
 The plugin has no use and will do nothing if you do not use this theme.
 

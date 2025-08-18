@@ -23,11 +23,8 @@ Built specifically for the [**waldjugend-theme**](https://github.com/lwijshoff/w
 
 Once activated, the plugin will:
 - Provide an easy-to-use interface for customizing theme settings.
-- Allow administrators to change various visual aspects of the [waldjugend-theme](https://github.com/lwijshoff/waldjugend-theme), including header and footer elements, such as Horst / Ortsgruppe or Landesverband.
+- Allow administrators to change various visual aspects of the [waldjugend-theme](https://github.com/lwijshoff/waldjugend-theme), including header and footer elements, such as Horst / Ortsgruppe or Associations.
 - Apply changes to the site once saved, ensuring a consistent look and feel across sites.
-
-> [!TIP]
-> No additional configuration should be required after activation for basic functionality.
 
 ## Compatibility
 
@@ -38,8 +35,19 @@ Once activated, the plugin will:
 
 ## License
 
-This plugin is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
 
-## Contribute
+This program is distributed in the hope that it will be useful,
+but **WITHOUT ANY WARRANTY**; without even the implied warranty of
+**MERCHANTABILITY** or **FITNESS FOR A PARTICULAR PURPOSE**.  See the
+[GNU General Public License](http://www.gnu.org/copyleft/gpl.html) for more details.
 
-Feel free to fork the repository and submit pull requests. If you have suggestions, bug reports, or improvements, feel free to open an issue or submit a pull request.
+You should have received a copy of the GNU General Public License
+along with this program. If not, see http://www.gnu.org/copyleft/gpl.html
+
+## Contributing
+
+We welcome contributions to improve the Waldjugend child theme! If you'd like to report issues, suggest features, or submit code changes, please take a moment to review our [Contributing Guidelines](CONTRIBUTING.md). Following these guidelines helps us maintain quality and streamline collaboration.
