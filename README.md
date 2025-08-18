@@ -9,7 +9,7 @@ Built specifically for the [**waldjugend-theme**](https://github.com/lwijshoff/w
 
 - Simplifies the customization of theme settings
 - Tailored for the [waldjugend-theme](https://github.com/lwijshoff/waldjugend-theme)
-- Easily modify key visual elements, such as Horst / Ortsgruppe or Landesverband
+- Easily modify key visual elements, such as Horst / Ortsgruppe or Landesverband and footer elements
 - Ensures a consistent look and feel across the site
 
 ## Installation
@@ -32,6 +32,7 @@ Once activated, the plugin will:
 ## Compatibility
 
 - WordPress 6.8+
+- Apache 8.3+
 - Compatible with the [waldjugend-theme](https://github.com/lwijshoff/waldjugend-theme)
 - Optimized for Waldjugend websites
 
