@@ -16,7 +16,7 @@
  * Update URI:        https://github.com/lwijshoff/waldjugend-plugin
  * Text Domain:       waldjugend-plugin
  * Domain Path:       /languages
- * Version:           2.0.0-gamma
+ * Version:           2.0.0
  * Requires at least: 5.2
  * Requires PHP:      8.3
  */
