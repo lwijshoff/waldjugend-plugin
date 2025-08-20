@@ -7,6 +7,9 @@ The format is based on [Keep a Changelog](https://keepachangelog.com) and this p
 ## [Unreleased]
 
 
+<a name="v2.0.0"></a>
+## [v2.0.0] - 2025-08-21
+
 <a name="v2.0.0-gamma"></a>
 ## [v2.0.0-gamma] - 2025-08-21
 ### New Features
@@ -44,7 +47,8 @@ The format is based on [Keep a Changelog](https://keepachangelog.com) and this p
 <a name="v0.1.0"></a>
 ## v0.1.0 - 2025-04-17
 
-[Unreleased]: https://github.com/lwijshoff/waldjugend-plugin/compare/v2.0.0-gamma...HEAD
+[Unreleased]: https://github.com/lwijshoff/waldjugend-plugin/compare/v2.0.0...HEAD
+[v2.0.0]: https://github.com/lwijshoff/waldjugend-plugin/compare/v2.0.0-gamma...v2.0.0
 [v2.0.0-gamma]: https://github.com/lwijshoff/waldjugend-plugin/compare/v2.0.0-alpha...v2.0.0-gamma
 [v2.0.0-alpha]: https://github.com/lwijshoff/waldjugend-plugin/compare/v1.0.1...v2.0.0-alpha
 [v1.0.1]: https://github.com/lwijshoff/waldjugend-plugin/compare/v1.0.0...v1.0.1
