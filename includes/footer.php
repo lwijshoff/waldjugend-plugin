@@ -26,7 +26,7 @@ function waldjugend_generate_main_footer_html() {
     if ($street) $contact[] = esc_html($street);
     if ($place)  $contact[] = esc_html($place);
     if ($email)  $contact[] = '<a class="main-footer-link" href="mailto:' . esc_attr($email) . '">' . esc_html($email) . '</a>';
-    if ($phone)  $contact[] = esc_html($phone);
+    if ($phone)  $contact[] = 'tel: ' . esc_html($phone);
 
     if (!empty($contact)) {
         $html .= '<div class="column">';
@@ -91,8 +91,12 @@ function waldjugend_generate_bottom_footer_html() {
             esc_html($association)
         );
     } else {
-        // fallback if no settings yet
-        return '&copy; ' . esc_html($year) . ' <a href="https://github.com/lwijshoff">Leonard Wijshoff</a>';
+        $footer_text = sprintf(
+            '&copy; %s <a href="%s">%s</a>',
+            esc_html($year),
+            esc_url(WJ_GITHUB_URL),
+            esc_html(WJ_AUTHOR_NAME)
+        );
     }
 
     return $footer_text;

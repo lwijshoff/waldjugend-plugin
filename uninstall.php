@@ -18,6 +18,7 @@ $options = [
     'waldjugend_address_place',
     'waldjugend_contact_email',
     'waldjugend_contact_number',
+    'nirvana_settings' // On uninstall, also remove nirvana_settings from the DB since the plugin adds its own settings there
 ];
 
 foreach ( $options as $option ) {

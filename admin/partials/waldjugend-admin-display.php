@@ -133,6 +133,29 @@
                     </p>
                 </td>
             </tr>
+            <!-- Socials Section -->
+            <tr class="section-header">
+                <th colspan="2">
+                    <div class="header-flex">
+                        <h2>Soziale Netzwerke</h2>
+                    </div>
+                </th>
+            </tr>
+            <tr class="row-type">
+                <th scope="row">Soziale Netzwerke</th>
+                <td>
+                    <div class="social-settings">
+                        <?php 
+                        // Loop through 5 slots for social networks
+                        for ($i = 1; $i <= 5; $i++) {
+                            $this->render_social_field($i);
+                            echo "<br>";
+                        }
+                        ?>
+                    </div>
+                    <p class="description">Hier kannst du bis zu 5 soziale Netzwerke für deine Seite festlegen.</p>
+                </td>
+            </tr>
         </table>
         <?php submit_button(); ?>
     </form>
