@@ -1,29 +1,33 @@
-name: Package Plugin
+name: Package Theme
 
 on:
   release:
-    types: [published]
+    types: [created]
 
 jobs:
-  build:
+  build-zip:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout
+      - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Prepare and zip
+      - name: Prepare folder for ZIP
         run: |
-          mkdir dist
-          mv $GITHUB_WORKSPACE dist/waldjugend-plugin
-          cd dist
-          zip -r waldjugend-plugin.zip waldjugend-plugin \
-            -x "*.git*" \
-            -x "waldjugend-plugin/.github/*" \
-            -x "waldjugend-plugin/.chglog/*" \
-            -x "waldjugend-plugin/tests/*"
+          mkdir waldjugend-theme
+          rsync -av --progress ./waldjugend-theme/ waldjugend-theme/ \
+            --exclude='.git*' \
+            --exclude='.github/*' \
+            --exclude='.chglog/*' \
+            --exclude='tests/*'
 
-      - name: Upload release asset
-        uses: softprops/action-gh-release@v2
+      - name: Create ZIP
+        run: |
+          zip -r waldjugend-theme.zip waldjugend-theme
+
+      - name: Upload Release Asset
+        uses: softprops/action-gh-release@v1
         with:
-          files: dist/waldjugend-plugin.zip
+          files: waldjugend-theme.zip
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
