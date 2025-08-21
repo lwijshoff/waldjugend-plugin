@@ -1,4 +1,4 @@
-name: Package Theme
+name: Package Plugin
 
 on:
   release:
@@ -14,8 +14,8 @@ jobs:
 
       - name: Prepare folder for ZIP
         run: |
-          mkdir waldjugend-theme
-          rsync -av --progress ./waldjugend-theme/ waldjugend-theme/ \
+          mkdir waldjugend-plugin
+          rsync -av --progress ./waldjugend-plugin/ waldjugend-plugin/ \
             --exclude='.git*' \
             --exclude='.github/*' \
             --exclude='.chglog/*' \
@@ -23,11 +23,11 @@ jobs:
 
       - name: Create ZIP
         run: |
-          zip -r waldjugend-theme.zip waldjugend-theme
+          zip -r waldjugend-plugin.zip waldjugend-plugin
 
       - name: Upload Release Asset
         uses: softprops/action-gh-release@v1
         with:
-          files: waldjugend-theme.zip
+          files: waldjugend-plugin.zip
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
