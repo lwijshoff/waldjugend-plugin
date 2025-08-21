@@ -1,0 +1,29 @@
+name: Package Plugin
+
+on:
+  release:
+    types: [published]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Prepare and zip
+        run: |
+          mkdir dist
+          mv $GITHUB_WORKSPACE dist/waldjugend-plugin
+          cd dist
+          zip -r waldjugend-plugin.zip waldjugend-plugin \
+            -x "*.git*" \
+            -x "waldjugend-plugin/.github/*" \
+            -x "waldjugend-plugin/.chglog/*" \
+            -x "waldjugend-plugin/tests/*"
+
+      - name: Upload release asset
+        uses: softprops/action-gh-release@v2
+        with:
+          files: dist/waldjugend-plugin.zip
