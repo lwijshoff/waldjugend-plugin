@@ -2,32 +2,41 @@ name: Package Plugin
 
 on:
   release:
-    types: [created]
+    types: [published]
 
 jobs:
   build-zip:
     runs-on: ubuntu-latest
-
     steps:
-      - name: Checkout repository
+      - name: Checkout code
         uses: actions/checkout@v4
 
-      - name: Prepare folder for ZIP
+      - name: Set up release version and zip name
+        id: vars
         run: |
-          mkdir waldjugend-plugin
-          rsync -av --progress ./waldjugend-plugin/ waldjugend-plugin/ \
+          TAG="${GITHUB_REF#refs/tags/}"
+          ZIPNAME="waldjugend-plugin-${TAG}.zip"
+          echo "ZIPNAME=$ZIPNAME" >> $GITHUB_ENV
+          echo "TAG=$TAG" >> $GITHUB_ENV
+
+      - name: Prepare plugin directory
+        run: |
+          mkdir -p waldjugend-plugin
+          rsync -av \
             --exclude='.git*' \
-            --exclude='.github/*' \
-            --exclude='.chglog/*' \
-            --exclude='tests/*'
+            --exclude='.github' \
+            --exclude='.chglog' \
+            --exclude='waldjugend-plugin' \
+            ./ waldjugend-plugin/
+          ls -la waldjugend-plugin
 
-      - name: Create ZIP
+      - name: Create the zip file
         run: |
-          zip -r waldjugend-plugin.zip waldjugend-plugin
+          zip -r "$ZIPNAME" waldjugend-plugin
 
-      - name: Upload Release Asset
-        uses: softprops/action-gh-release@v1
+      - name: Upload release asset
+        uses: softprops/action-gh-release@v2
         with:
-          files: waldjugend-plugin.zip
+          files: ${{ env.ZIPNAME }}
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
