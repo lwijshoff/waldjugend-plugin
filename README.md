@@ -1,5 +1,8 @@
 # Waldjugend WordPress Plugin
 
+![GitHub Release](https://img.shields.io/github/v/release/lwijshoff/waldjugend-plugin?display_name=release&style=for-the-badge&logo=github)
+![GitHub License](https://img.shields.io/github/license/lwijshoff/waldjugend-plugin?style=for-the-badge)
+
 &copy; Copyright 2025-present **Leonard Wijshoff**
 
 **The Waldjugend Plugin** is a utility plugin designed to enhance the customization of theme settings across WordPress installations.  
